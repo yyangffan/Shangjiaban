@@ -1,0 +1,161 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_ee"
+    tools:context="com.superc.shangjiaban.ui.activity.OrderSearchfhActivity">
+
+
+    <TextView
+        android:id="@+id/order_searchfh_sheng"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:background="@drawable/circle_white"
+        android:hint="所有省"
+        android:padding="@dimen/padding_big"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/order_searchfh_shi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:background="@drawable/circle_white"
+        android:hint="所有市"
+        android:padding="@dimen/padding_big"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/order_searchfh_sheng"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_sheng"
+        app:layout_constraintTop_toBottomOf="@+id/order_searchfh_sheng"/>
+
+    <TextView
+        android:id="@+id/order_searchfh_qu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:textColor="@color/black"
+        android:hint="所有区县"
+        android:padding="@dimen/padding_big"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/order_searchfh_shi"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_shi"
+        app:layout_constraintTop_toBottomOf="@+id/order_searchfh_shi"/>
+
+    <TextView
+        android:id="@+id/order_searchfh_quxian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:textColor="@color/black"
+        android:hint="所有小区"
+        android:padding="@dimen/padding_big"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/order_searchfh_qu"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_qu"
+        app:layout_constraintTop_toBottomOf="@+id/order_searchfh_qu"/>
+
+    <TextView
+        android:id="@+id/order_searchfh_allhd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="所有活动"
+        android:textColor="@color/black"
+        android:padding="@dimen/padding_big"
+        app:layout_constraintLeft_toLeftOf="@+id/order_searchfh_quxian"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_quxian"
+        app:layout_constraintTop_toBottomOf="@+id/order_searchfh_quxian"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchfh_sheng"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_sheng"
+        app:layout_constraintTop_toTopOf="@+id/order_searchfh_sheng"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchfh_shi"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_shi"
+        app:layout_constraintTop_toTopOf="@+id/order_searchfh_shi"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchfh_qu"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_qu"
+        app:layout_constraintTop_toTopOf="@+id/order_searchfh_qu"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchfh_quxian"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_quxian"
+        app:layout_constraintTop_toTopOf="@+id/order_searchfh_quxian"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchfh_allhd"
+        app:layout_constraintRight_toRightOf="@+id/order_searchfh_allhd"
+        app:layout_constraintTop_toTopOf="@+id/order_searchfh_allhd"/>
+
+    <TextView
+        android:id="@+id/order_searchfh_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/circle_appbg"
+        android:gravity="center"
+        android:padding="@dimen/padding_big"
+        android:text="搜索"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+</android.support.constraint.ConstraintLayout>

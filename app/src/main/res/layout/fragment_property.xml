@@ -1,0 +1,163 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_ee"
+    tools:context="com.superc.shangjiaban.ui.PropertyFragment">
+
+    <RadioGroup
+        android:id="@+id/property_rg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/property_rbuser_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="物业用户列表"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/property_yongjin_shenqing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="佣金提现申请"
+            android:textColor="@color/gray_nine"/>
+
+        <RadioButton
+            android:id="@+id/property_yongjin_jilu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="佣金提现记录"
+            android:textColor="@color/gray_nine"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/property_user_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="请输入关键字搜索"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_noramal_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/property_shuoming"
+        app:layout_constraintTop_toBottomOf="@+id/property_rg"/>
+
+    <RelativeLayout
+        android:id="@+id/rela"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/tv_round_appbg"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/property_shuoming"
+        app:layout_constraintTop_toBottomOf="@+id/property_rg">
+
+        <TextView
+            android:id="@+id/property_yongjinsq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@drawable/xz"
+            android:gravity="center"
+            android:padding="@dimen/padding_big"
+            android:text=" 添加申请"
+            android:textColor="@color/app_bg"
+            />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/property_shuoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/note"
+        app:layout_constraintBottom_toBottomOf="@+id/property_user_list"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/property_user_list"/>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartrefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/property_user_list">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/property_rc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    <TextView
+        android:id="@+id/property_tv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:text="搜索"
+        android:textColor="@color/app_bg"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/rela"
+        app:layout_constraintRight_toRightOf="@+id/property_user_list"
+        app:layout_constraintTop_toTopOf="@+id/rela"/>
+
+
+</android.support.constraint.ConstraintLayout>

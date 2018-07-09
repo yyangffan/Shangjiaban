@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/wy_userlist_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="2dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@+id/wy_userlist_id"
+        app:layout_constraintTop_toBottomOf="@+id/wy_userlist_id"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_yongjin"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/tv_god"
+        android:gravity="center"
+        android:padding="@dimen/padding_normal"
+        android:text="审核中"
+        android:textColor="@color/god_yellow"
+        app:layout_constraintLeft_toLeftOf="@+id/wy_userlist_city"
+        app:layout_constraintTop_toBottomOf="@+id/wy_userlist_city"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView40"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/app_bg"
+        android:layout_marginStart="16dp"
+        android:text="申请佣金:"
+        app:layout_constraintLeft_toRightOf="@+id/wy_userlist_yongjin"
+        app:layout_constraintTop_toTopOf="@+id/wy_userlist_id"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/app_bg"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
+        app:layout_constraintLeft_toRightOf="@+id/textView19"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView19"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_youxiang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@+id/textView17"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toRightOf="@+id/textView17"
+        android:layout_marginLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/wy_userlist_youxiang"
+        app:layout_constraintTop_toBottomOf="@+id/wy_userlist_youxiang"/>
+
+    <TextView
+        android:id="@+id/wy_userlist_chakan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_appbg"
+        android:paddingTop="@dimen/padding_normal"
+        android:paddingBottom="@dimen/padding_normal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center"
+        android:text="通过"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/wy_userlist_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wy_userlist_phone"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/gray_ee"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wy_userlist_time"/>
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="收款途径:"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/wy_userlist_phone"
+        app:layout_constraintTop_toBottomOf="@+id/wy_userlist_phone"/>
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="收款账号:"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"/>
+
+</android.support.constraint.ConstraintLayout>

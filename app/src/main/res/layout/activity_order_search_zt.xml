@@ -1,0 +1,96 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_ee"
+    >
+
+
+    <TextView
+        android:id="@+id/order_searchzt_xiaoqu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="所有小区"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/order_searchzt_hd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="所有活动"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/order_searchzt_xiaoqu"
+        app:layout_constraintRight_toRightOf="@+id/order_searchzt_xiaoqu"
+        app:layout_constraintTop_toBottomOf="@+id/order_searchzt_xiaoqu"/>
+
+    <EditText
+        android:id="@+id/order_searchzt_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="请输入提货码"
+        android:inputType="number"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_noramal_size"
+        app:layout_constraintLeft_toLeftOf="@+id/order_searchzt_hd"
+        app:layout_constraintRight_toRightOf="@+id/order_searchzt_hd"
+        app:layout_constraintTop_toBottomOf="@+id/order_searchzt_hd"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchzt_xiaoqu"
+        app:layout_constraintRight_toRightOf="@+id/order_searchzt_xiaoqu"
+        app:layout_constraintTop_toTopOf="@+id/order_searchzt_xiaoqu"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/order_searchzt_hd"
+        app:layout_constraintRight_toRightOf="@+id/order_searchzt_hd"
+        app:layout_constraintTop_toTopOf="@+id/order_searchzt_hd"
+        app:layout_constraintVertical_bias="0.4"/>
+
+
+    <TextView
+        android:id="@+id/order_searchzt_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/circle_appbg"
+        android:gravity="center"
+        android:padding="@dimen/padding_big"
+        android:text="搜索"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+</android.support.constraint.ConstraintLayout>

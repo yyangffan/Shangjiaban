@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">百姓管家端</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">创建哎</string>
+    <string name="name_home">百姓管家-管家版</string>
+    <string name="name_user">用户管理</string>
+    <string name="name_Village">小区管理</string>
+    <string name="name_property">物业管理</string>
+    <string name="name_shop">订单管理</string>
+    <string name="to_edit"><u>查看编辑</u></string>
+    <string name="tv_xiangqing"><u>详情</u></string>
+    <string name="tv_chakan"><u>查看详情</u></string>
+
+    <array name="tab_main_title">
+        <item>首页</item>
+        <item>用户</item>
+        <item>小区</item>
+        <item>管家</item>
+        <item>订单</item>
+    </array>
+    <!--以下为写死的提示信息内容-->
+    <array name="user_userlist_note"><!--用户-用户列表的提示-->
+        <item>会员列表管理, 可以给会员群发站内信等.</item>
+        <item>站内信可以发给某个会员，也可以发给全体会员</item>
+        <item>物业只能看到自己小区的会员</item>
+    </array>
+    <array name="user_godlist_note"><!--用户-黄金抵费记录-->
+        <item>黄金抵费汇款记录历史明细</item>
+    </array>
+    <array name="user_waitzhuanzhang_note"><!--用户-待转账提示-->
+        <item>此处展示的是需要转账的物业会员，即普通会员黄金抵物业费申请记录的总计</item>
+        <item>点击“确认已打款”，表示您已经给该物业转账</item>
+        <item>如果所有待转账都已处理完毕或无申请，该页面无数据</item>
+    </array>
+    <array name="village_allxiaoqu"><!--小区-所有小区-->
+        <item>物业可添加，编辑自己管理的小区</item>
+        <item>每个物业只能看到自己的小区</item>
+    </array>
+    <array name="village_fankui"><!--小区-反馈信息-->
+        <item>物业可以查看用户的反馈信息</item>
+    </array>
+    <array name="property_userlist"><!--管家-物业用户列表-->
+        <item>物业用户列表</item>
+        <item>管理员可以查看所有物业用户</item>
+        <item>物业用户可以查看自己的信息</item>
+    </array>
+    <array name="property_tixianshenqing"><!--管家-佣金提现申请-->
+        <item>物业佣金提现申请</item>
+        <item>选择要审核的信息，点击“提现通过”，表示已同意该申请</item>
+        <item>如果所有申请都已处理完毕或没有申请，该页面无数据</item>
+    </array>
+    <array name="property_tixianjillu"><!--管家-佣金提现记录-->
+        <item>物业佣金提现记录</item>
+        <item>如果您已给物业打款，选中该条记录，点击“确认打款”</item>
+        <item>记录可导出</item>
+    </array>
+    <array name="shop_all"><!--订单-所有订单-->
+        <item>所有订单都显示在这里，可根据订单时间，订单状态进行筛选</item>
+    </array>
+    <array name="shop_fahuo"><!--订单-待发货-->
+        <item>代发货订单列表</item>
+        <item>按地区和活动筛选出订单后，点击批量确认发货，可将该筛选条件下的所有订单发货</item>
+        <item>如果没有待发货订单，该页面下无数据</item>
+    </array>
+    <array name="shop_ziti"><!--订单-待自提-->
+        <item>每个物业只能看到自己的订单</item>
+        <item>可按小区和活动筛选订单后，点击通知取货，可批量短信通知用户取货</item>
+        <item>用户凭取货码取货，取货完成后点击“确认已自提”，订单完成</item>
+    </array>
+
+
+    <!--如下订单搜索的条件进行写死-->
+    <array name="shop_zfzt"><!--支付状态-->
+        <item>未支付</item>
+        <item>已支付</item>
+    </array>
+    <array name="shop_fhzt"><!--发货状态-->
+        <item>未发货</item>
+        <item>已发货</item>
+    </array>
+    <array name="shop_ddzt"><!--订单状态-->
+        <item>确认</item>
+        <item>收货</item>
+        <item>取消</item>
+        <item>完成</item>
+        <item>作废</item>
+        <item>退款中</item>
+        <item>已退款</item>
+        <item>删除</item>
+    </array>
+    <!--活动写死-->
+    <array name="huodong">
+        <item>默认</item>
+        <item>抢购</item>
+        <item>团购</item>
+        <item>优惠</item>
+        <item>预售</item>
+        <item>虚拟</item>
+        <item>超市</item>
+    </array>
+
+
+</resources>

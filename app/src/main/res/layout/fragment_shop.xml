@@ -1,0 +1,160 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_ee"
+    tools:context="com.superc.shangjiaban.ui.ShopFragment">
+
+    <RadioGroup
+        android:id="@+id/shop_rg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/shop_rb_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="所有订单"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/shop_rb_waitfh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="待发货"
+            android:textColor="@color/gray_nine"/>
+
+        <RadioButton
+            android:id="@+id/shop_rb_waitown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:padding="@dimen/padding_normal"
+            android:text="待确认"
+            android:textColor="@color/gray_nine"/>
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/shop_tv_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:hint="筛选订单"
+        android:lines="1"
+        android:padding="@dimen/padding_big"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/shop_imgv_shuoming"
+        app:layout_constraintTop_toBottomOf="@+id/shop_rg"/>
+
+    <ImageView
+        android:id="@+id/shop_imgv_shuoming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/note"
+        app:layout_constraintBottom_toBottomOf="@+id/shop_tv_search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shop_tv_search"/>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartrefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shop_tv_search">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/shop_rc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/shop_lineone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_ee"/>
+
+        <RadioButton
+            android:id="@+id/shop_rb_choseall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/shop_lineone"
+            android:button="@drawable/radiobt_check"
+            android:padding="@dimen/padding_normal"
+            android:text="全选"
+            android:textColor="@color/app_bg"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/shop_rb_choseall"
+            android:background="@color/gray_ee"/>
+
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

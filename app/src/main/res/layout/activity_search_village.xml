@@ -1,0 +1,124 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_ee"
+    tools:context="com.superc.shangjiaban.ui.activity.SearchVillageActivity">
+
+
+    <TextView
+        android:id="@+id/search_village_sheng"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="所有省"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray_nine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/search_village_shi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="所有市"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/search_village_sheng"
+        app:layout_constraintRight_toRightOf="@+id/search_village_sheng"
+        app:layout_constraintTop_toBottomOf="@+id/search_village_sheng"/>
+
+    <TextView
+        android:id="@+id/search_village_xian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="所有县"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/search_village_shi"
+        app:layout_constraintRight_toRightOf="@+id/search_village_shi"
+        app:layout_constraintTop_toBottomOf="@+id/search_village_shi"/>
+
+    <EditText
+        android:id="@+id/search_village_xiaoqu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:hint="请输入小区名称"
+        android:padding="@dimen/padding_big"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_noramal_size"
+        app:layout_constraintLeft_toLeftOf="@+id/search_village_xian"
+        app:layout_constraintRight_toRightOf="@+id/search_village_xian"
+        app:layout_constraintTop_toBottomOf="@+id/search_village_xian"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/search_village_sheng"
+        app:layout_constraintRight_toRightOf="@+id/search_village_sheng"
+        app:layout_constraintTop_toTopOf="@+id/search_village_sheng"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/search_village_shi"
+        app:layout_constraintRight_toRightOf="@+id/search_village_shi"
+        app:layout_constraintTop_toTopOf="@+id/search_village_shi"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@+id/search_village_xian"
+        app:layout_constraintRight_toRightOf="@+id/search_village_xian"
+        app:layout_constraintTop_toTopOf="@+id/search_village_xian"/>
+
+    <TextView
+        android:id="@+id/search_village_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/circle_appbg"
+        android:gravity="center"
+        android:padding="@dimen/padding_big"
+        android:text="搜索"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+</android.support.constraint.ConstraintLayout>

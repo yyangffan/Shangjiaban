@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#0000ff</color>
+    <color name="blue_bot">#0093fe</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="app_bg">#1983D1</color>
+
+    <color name="red">#ff0000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="red_money">#D7191A</color>
+
+    <color name="green">#00ff00</color>
+
+    <color name="god_yellow">#F6BF45</color>
+
+    <color name="white">#ffffff</color>
+
+    <color name="black">#000000</color>
+    <color name="gray_fou">#404040</color>
+    <color name="line_color">#666666</color>
+    <color name="gray_nine">#999999</color>
+    <color name="gray_cd">#cdc1c5</color>
+    <color name="gray_ed">#ededed</color>
+    <color name="gray_ea">#EAEAEA</color>
+    <color name="gray_ba">#BABABA</color>
+    <color name="gray_ee">#EEEEEE</color>
+
+    <color name="gray_normal">#f4f4f4</color>
+    <color name="gray_no_normal">#fefefe</color>
+
+
+    <color name="text1">#1983D1</color>
+    <color name="text2">#333333</color>
+    <color name="split_line">#11112233</color>
+
+
+
+</resources>

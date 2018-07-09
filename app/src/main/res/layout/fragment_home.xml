@@ -1,0 +1,478 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_ee"
+        android:orientation="vertical"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_bg">
+
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="今日收益 (元)"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="- -"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                app:layout_constraintLeft_toLeftOf="@+id/textView60"
+                app:layout_constraintTop_toBottomOf="@+id/textView60"
+                android:layout_marginRight="8dp"
+                app:layout_constraintRight_toRightOf="@+id/textView60"/>
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="本月收益"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toRightOf="@+id/home_today"
+                app:layout_constraintRight_toLeftOf="@+id/textView98"
+                app:layout_constraintTop_toTopOf="@+id/home_today"/>
+
+            <TextView
+                android:id="@+id/home_month_shouyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- -"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/home_today"
+                app:layout_constraintLeft_toLeftOf="@+id/textView87"
+                app:layout_constraintRight_toRightOf="@+id/textView87"
+                app:layout_constraintTop_toBottomOf="@+id/textView87"/>
+
+            <TextView
+                android:id="@+id/textView98"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="16dp"
+                android:text="总收益"
+                android:textColor="@color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView87"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/home_all_shouyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- -"
+                android:textColor="@color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/home_month_shouyi"
+                app:layout_constraintLeft_toLeftOf="@+id/textView98"
+                app:layout_constraintRight_toRightOf="@+id/textView98"/>
+
+            <TextView
+                android:id="@+id/home_tixian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/circle_strke_white"
+                android:paddingBottom="2dp"
+                android:paddingLeft="@dimen/padding_big"
+                android:paddingRight="@dimen/padding_big"
+                android:paddingTop="2dp"
+                android:text="提现"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="@+id/textView60"
+                app:layout_constraintTop_toBottomOf="@+id/home_today"
+                android:layout_marginLeft="0dp"/>
+
+            <TextView
+                android:id="@+id/home_tixianjilu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="提现记录"
+                android:textColor="@color/white"
+                app:layout_constraintBaseline_toBaselineOf="@+id/home_tixian"
+                app:layout_constraintLeft_toRightOf="@+id/home_tixian"/>
+
+            <LinearLayout
+                android:id="@+id/home_yinhangka"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/home_round_bg"
+                android:orientation="horizontal"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_tixianjilu">
+
+                <TextView
+                    android:id="@+id/home_weibangding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:paddingBottom="@dimen/padding_normal"
+                    android:paddingLeft="@dimen/padding_bigger"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:text="未绑定银行卡"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/home_gobangding"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right|center_vertical"
+                    android:paddingBottom="@dimen/padding_normal"
+                    android:paddingRight="@dimen/padding_normal"
+                    android:paddingTop="@dimen/padding_normal"
+                    android:text="现在去绑定银行卡"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingRight="@dimen/padding_big"
+                    android:src="@drawable/plus"/>
+
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/home_rlone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/imgv_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="32dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/bottom2"/>
+
+                    <TextView
+                        android:id="@+id/tv_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgv_one"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/imgv_one"
+                        android:paddingLeft="10dp"
+                        android:text="佣金数量"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/home_god_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tv_one"
+                        android:layout_below="@+id/tv_one"
+                        android:layout_toRightOf="@+id/imgv_one"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="- -"
+                        android:textColor="@color/app_bg"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/home_rltwo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/imgv_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="32dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/bottom3"/>
+
+                    <TextView
+                        android:id="@+id/tv_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgv_two"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/imgv_two"
+                        android:paddingLeft="10dp"
+                        android:text="小区数量"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/home_xiaoqu_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tv_two"
+                        android:layout_below="@+id/tv_two"
+                        android:layout_toRightOf="@+id/imgv_two"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="- -"
+                        android:textColor="@color/app_bg"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/home_rlthree"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/imgv_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="32dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/bottom4"/>
+
+                    <TextView
+                        android:id="@+id/tv_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgv_three"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/imgv_three"
+                        android:paddingLeft="10dp"
+                        android:text="订单数量"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/home_dingdan_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tv_three"
+                        android:layout_below="@+id/tv_three"
+                        android:layout_toRightOf="@+id/imgv_three"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="- -"
+                        android:textColor="@color/app_bg"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/home_rlfour"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/imgv_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="32dp"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/bottom1"/>
+
+                    <TextView
+                        android:id="@+id/tv_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/imgv_four"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@+id/imgv_four"
+                        android:paddingLeft="10dp"
+                        android:text="会员数量"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/home_huiyuan_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/tv_four"
+                        android:layout_below="@+id/tv_four"
+                        android:layout_toRightOf="@+id/imgv_four"
+                        android:gravity="center"
+                        android:paddingLeft="10dp"
+                        android:text="- -"
+                        android:textColor="@color/app_bg"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_big"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="版本信息:"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="程序版本:"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+            <TextView
+                android:id="@+id/home_app_banben"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="v2.0.5"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@+id/textView3"
+                app:layout_constraintTop_toTopOf="@+id/textView3"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="更新时间:"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/textView3"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+
+            <TextView
+                android:id="@+id/home_app_updateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="2017-08-04"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/home_app_banben"/>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="程序开发:"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+
+            <TextView
+                android:id="@+id/home_app_develop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="河北小超网络科技有限公司"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toRightOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/home_app_updateTime"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="版权所有:"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7"/>
+
+            <TextView
+                android:id="@+id/home_app_banquan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="盗版必究"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/home_app_develop"/>
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+</ScrollView>

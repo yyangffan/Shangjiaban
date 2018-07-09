@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/dialog_ll_chose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/dialog_chose_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_circle_bg"
+            android:gravity="center"
+            android:text="拍照"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_big_size"/>
+
+        <TextView
+            android:id="@+id/dialog_chose_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/bt_circle_bg"
+            android:gravity="center"
+            android:text="相册选择"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_big_size"
+            />
+
+        <TextView
+            android:id="@+id/dialog_chose_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_circle_bg"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_big_size"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog_rl_remind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/dialog_remind_imgv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/dialog_remind_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_remind_imgv"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="40dp"
+            android:paddingTop="@dimen/padding_bigger"
+            android:text="提示"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_big_size"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_remind_title"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_remind_cancle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bt_round_bg"
+                android:gravity="center"
+                android:padding="@dimen/padding_big"
+                android:text="否"
+                android:textColor="@color/black"
+                android:textSize="@dimen/txt_big_size"
+                />
+
+            <TextView
+                android:id="@+id/dialog_remind_sure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/app_bg"
+                android:gravity="center"
+                android:padding="@dimen/padding_big"
+                android:text="是"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_big_size"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dialog_cons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:background="@color/gray_ee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:padding="@dimen/padding_big"
+            android:text="站内信"
+            android:textColor="@color/line_color"
+            android:textSize="@dimen/txt_bigger_size"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+
+            <RadioButton
+                android:id="@+id/dialog_user_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/radiobt_check"
+                android:checked="true"
+                android:padding="@dimen/padding_normal"
+                android:text="发送给以下会员"
+                android:textColor="@color/line_color"/>
+
+            <RadioButton
+                android:id="@+id/dialog_user_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/radiobt_check"
+                android:padding="@dimen/padding_normal"
+                android:text="发送给全部会员"
+                android:textColor="@color/line_color"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/dialog_user_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_juxing_bg"
+            android:padding="@dimen/padding_big"
+            android:text="- -"
+            android:textColor="@color/black"
+            android:textSize="@dimen/txt_big_size"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/radioGroup"
+            app:layout_constraintRight_toRightOf="@+id/radioGroup"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
+
+        <EditText
+            android:id="@+id/dialog_user_content"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edt_juxing_bg"
+            android:gravity="top|left"
+            android:hint="发送内容"
+            android:padding="@dimen/padding_normal"
+            app:layout_constraintLeft_toLeftOf="@+id/dialog_user_name"
+            app:layout_constraintRight_toRightOf="@+id/dialog_user_name"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_user_name"/>
+
+        <TextView
+            android:id="@+id/dialog_user_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/app_bg"
+            android:gravity="center"
+            android:padding="@dimen/padding_big"
+            android:text="发送"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_big_size"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_user_content"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/shop_fh_cons"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:text="收货人:"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/shop_fh_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="花花"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView46"
+        app:layout_constraintLeft_toRightOf="@+id/textView46"/>
+
+    <TextView
+        android:id="@+id/shop_fh_danhao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView46"
+        app:layout_constraintTop_toBottomOf="@+id/textView46"/>
+
+    <TextView
+        android:id="@+id/shop_fh_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="4dp"
+        android:text="2017-8-9 15:32"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="@+id/shop_fh_danhao"
+        app:layout_constraintTop_toBottomOf="@+id/shop_fh_danhao"/>
+
+    <TextView
+        android:id="@+id/shop_fh_fh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/tv_god"
+        android:gravity="center"
+        android:minWidth="90dp"
+        android:paddingBottom="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_bigger"
+        android:paddingRight="@dimen/padding_bigger"
+        android:paddingTop="@dimen/padding_normal"
+        android:text="待发货"
+        android:textColor="@color/god_yellow"
+        app:layout_constraintLeft_toLeftOf="@+id/shop_fh_time"
+        app:layout_constraintTop_toBottomOf="@+id/shop_fh_time"/>
+
+    <TextView
+        android:id="@+id/textView58"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="商品数量:"
+        android:textColor="@color/app_bg"
+        app:layout_constraintBaseline_toBaselineOf="@+id/shop_fh_name"
+        app:layout_constraintLeft_toRightOf="@+id/shop_fh_time"/>
+
+    <TextView
+        android:id="@+id/shop_fh_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="TextView"
+        android:textColor="@color/app_bg"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView58"
+        app:layout_constraintLeft_toRightOf="@+id/textView58"/>
+
+    <TextView
+        android:id="@+id/textView62"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="商品总价:"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/textView58"
+        app:layout_constraintTop_toBottomOf="@+id/textView58"/>
+
+    <TextView
+        android:id="@+id/shop_fh_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView62"
+        app:layout_constraintLeft_toRightOf="@+id/textView62"/>
+
+    <TextView
+        android:id="@+id/textView66"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="手机:"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/textView62"
+        app:layout_constraintTop_toBottomOf="@+id/textView62"/>
+
+    <TextView
+        android:id="@+id/shop_fh_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView66"
+        app:layout_constraintLeft_toRightOf="@+id/textView66"/>
+
+    <TextView
+        android:id="@+id/textView73"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="支付时间:"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@+id/textView66"
+        app:layout_constraintTop_toBottomOf="@+id/textView66"/>
+
+    <TextView
+        android:id="@+id/shop_fh_zftime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="4dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView73"
+        app:layout_constraintLeft_toRightOf="@+id/textView73"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/shop_fh_gofh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_appbg"
+        android:gravity="center"
+        android:paddingBottom="@dimen/padding_normal"
+        android:paddingLeft="@dimen/padding_big"
+        android:paddingRight="@dimen/padding_big"
+        android:paddingTop="@dimen/padding_normal"
+        android:text="去发货"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/shop_fh_money"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/shop_fh_num"/>
+
+    <TextView
+        android:id="@+id/textView83"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/gray_ee"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shop_fh_fh"/>
+
+    <ImageView
+        android:id="@+id/shop_fh_imgv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="0dp"
+        android:src="@drawable/dg2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/textView83"
+        app:layout_constraintRight_toRightOf="@+id/textView83"/>
+
+</android.support.constraint.ConstraintLayout>

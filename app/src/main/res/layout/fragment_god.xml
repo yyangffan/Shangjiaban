@@ -1,0 +1,186 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_ee">
+
+    <RadioGroup
+        android:id="@+id/god_rg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/god_user_list"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="用户列表"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/god_god_jilu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:padding="@dimen/padding_normal"
+            android:text="黄金抵费记录"
+            android:textColor="@color/gray_nine"
+            android:textSize="16sp"/>
+
+        <RadioButton
+            android:id="@+id/god_wait_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:padding="@dimen/padding_normal"
+            android:text="待转账"
+            android:textColor="@color/gray_nine"/>
+
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/god_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_white"
+        android:ems="10"
+        android:hint="请输入昵称或手机号搜索"
+        android:inputType="textPersonName"
+        android:padding="@dimen/padding_big"
+        android:textSize="@dimen/txt_noramal_size"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/god_rg"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingRight="8dp"
+        android:src="@drawable/note"
+        app:layout_constraintBottom_toBottomOf="@+id/god_search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/god_search"/>
+
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_normal"
+        android:text="搜索"
+        android:textColor="@color/app_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/god_search"
+        app:layout_constraintRight_toRightOf="@+id/god_search"
+        app:layout_constraintTop_toTopOf="@+id/god_search"/>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartrefresh"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/god_rela"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/god_search"
+        app:layout_constraintVertical_bias="1.0"
+        app:srlEnablePreviewInEditMode="true">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/god_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <RelativeLayout
+        android:id="@+id/god_rela"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/shop_lineone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray_ee"/>
+
+        <TextView
+            android:id="@+id/god_piliang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/shop_lineone"
+            android:layout_marginLeft="@dimen/margin_normal"
+            android:background="@drawable/tv_login_blue"
+            android:padding="@dimen/padding_normal"
+            android:text="批量发送"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_noramal_size"/>
+
+        <RadioButton
+            android:id="@+id/shop_rb_choseall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/shop_lineone"
+            android:button="@drawable/radiobt_check"
+            android:padding="@dimen/padding_normal"
+            android:text="全选"
+            android:textColor="@color/app_bg"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/shop_rb_choseall"
+            android:background="@color/gray_ee"/>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

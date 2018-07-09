@@ -1,0 +1,303 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="com.superc.shangjiaban.ui.activity.ShopFHActivity">
+
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/padding_big"
+            android:text="基本信息"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView49"/>
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="订单ID"
+            app:layout_constraintLeft_toLeftOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/textView53"/>
+
+        <TextView
+            android:id="@+id/shop_fh_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView56"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView81"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="下单时间"
+            app:layout_constraintLeft_toLeftOf="@+id/textView56"
+            app:layout_constraintTop_toBottomOf="@+id/textView56"/>
+
+        <TextView
+            android:id="@+id/shop_fh_xdtime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView81"
+            app:layout_constraintRight_toRightOf="@+id/shop_fh_id"/>
+
+        <TextView
+            android:id="@+id/textView89"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView81"/>
+
+        <TextView
+            android:id="@+id/textView91"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/padding_big"
+            android:text="收货信息"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/textView89"/>
+
+        <TextView
+            android:id="@+id/textView92"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView91"/>
+
+        <TextView
+            android:id="@+id/textView94"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="收货人"
+            app:layout_constraintLeft_toLeftOf="@+id/textView91"
+            app:layout_constraintTop_toBottomOf="@+id/textView92"/>
+
+        <TextView
+            android:id="@+id/textView95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="联系方式"
+            app:layout_constraintLeft_toLeftOf="@+id/textView94"
+            app:layout_constraintTop_toBottomOf="@+id/textView94"/>
+
+        <TextView
+            android:id="@+id/textView96"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="收货地址"
+            app:layout_constraintLeft_toLeftOf="@+id/textView95"
+            app:layout_constraintTop_toBottomOf="@+id/textView95"/>
+
+        <TextView
+            android:id="@+id/shop_fh_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView94"
+            app:layout_constraintRight_toRightOf="@+id/shop_fh_xdtime"/>
+
+        <TextView
+            android:id="@+id/shop_fh_lxfs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView95"
+            app:layout_constraintRight_toRightOf="@+id/shop_fh_name"/>
+
+        <TextView
+            android:id="@+id/shop_fh_shdz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="100dp"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView96"
+            app:layout_constraintRight_toRightOf="@+id/shop_fh_lxfs"/>
+
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView96"/>
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/padding_big"
+            android:text="商品信息"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/textView100"/>
+
+        <TextView
+            android:id="@+id/textView102"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView101"/>
+
+        <TextView
+            android:id="@+id/textView103"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_ee"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/shop_fh_recycle"/>
+
+        <TextView
+            android:id="@+id/textView104"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="@dimen/padding_big"
+            android:text="发货单备注"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="@+id/textView101"
+            app:layout_constraintTop_toBottomOf="@+id/textView103"/>
+
+        <EditText
+            android:id="@+id/shop_fh_editText"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/edt_juxing_bg"
+            android:gravity="top|left"
+            android:hint="备注"
+            android:padding="@dimen/padding_big"
+            android:textSize="@dimen/txt_noramal_size"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView104"/>
+
+        <TextView
+            android:id="@+id/shop_fh_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/tv_rounds_appbg"
+            android:gravity="center"
+            android:paddingBottom="@dimen/padding_normal"
+            android:paddingLeft="@dimen/padding_big"
+            android:paddingRight="@dimen/padding_big"
+            android:paddingTop="@dimen/padding_normal"
+            android:text="确认发货"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="@+id/shop_fh_editText"
+            app:layout_constraintTop_toBottomOf="@+id/shop_fh_editText"/>
+
+        <TextView
+            android:id="@+id/textView106"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="可执行操作"
+            android:textColor="@color/black"
+            app:layout_constraintBaseline_toBaselineOf="@+id/shop_fh_sure"
+            app:layout_constraintRight_toLeftOf="@+id/shop_fh_sure"/>
+        <!--这里修改成了ListView不适用RecycleView了-->
+        <com.superc.shangjiaban.views.MyListView
+            android:id="@+id/shop_fh_recycle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView102"/>
+
+        <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/shop_fh_recycle"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:background="@color/white"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/textView102"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginEnd="8dp"/>-->
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
