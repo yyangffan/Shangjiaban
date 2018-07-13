@@ -8,9 +8,10 @@ import android.util.Log;
 import android.view.View;
 
 import com.superc.shangjiaban.R;
+import com.superc.shangjiaban.base.AppAppLication;
 import com.superc.shangjiaban.base.BaseActivity;
 import com.superc.shangjiaban.base.Constant;
-import com.superc.shangjiaban.others.MyService;
+import com.superc.shangjiaban.jiguang.SetJPushAlias;
 import com.superc.shangjiaban.others.MyViewPager;
 import com.superc.shangjiaban.others.PublicBean;
 import com.superc.shangjiaban.utils.ShareUtil;
@@ -68,10 +69,9 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
 
     @Override
     public void initListener() {
-        //开启订单轮询进行语音提醒
-        Intent intent = new Intent(this, MyService.class);
-        this.startService(intent);
-
+        //开启订单轮询进行语音提醒(由于ios不能再锁屏状态下提醒所以才舍弃了这种办法，使用了推送的方式来进行提醒)
+//        Intent intent = new Intent(this, MyService.class);
+//        this.startService(intent);
     }
 
 
@@ -97,6 +97,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         mTabLayout.setContainerLayout(R.layout.tab_container_view, R.id.iv_tab_icon, R.id.tv_tab_text, width, height);
         mTabLayout.setViewPager(mPager);
         mPager.setCurrentItem(getIntent().getIntExtra("tab", 0));
+        Log.e("跳转时的current", getIntent().getIntExtra("tab", 0) + "");
         if (mHomeFragment != null) {
             mHomeFragment.getData();
         }
@@ -261,6 +262,7 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     }
 
     public void logout() {
+        new SetJPushAlias("", this).cancleAlias();
         ShareUtil.getInstance(this).remove("uid");
         toGetData(new HashMap<String, String>(), Constant.LOGNOUT, false, new CallNetBack() {
             @Override
@@ -270,9 +272,36 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
         });
     }
 
+    //finish之后是不执行的
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);//设置新的intent
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int tab = getIntent().getIntExtra("tab", 0);
+        boolean isJp = (boolean) ShareUtil.getInstance(this).get("isJp", false);
+        if (tab != 0 && isJp) {
+            mShopFragment.refreshDingdanAll();
+            mPager.setCurrentItem(tab);
+            ShareUtil.getInstance(AppAppLication.getmContext()).put("isJp", false);
+        }
+    }
+
     @Override
     protected void onRestart() {
         super.onRestart();
+        int tab = getIntent().getIntExtra("tab", 0);
+        boolean isJp = (boolean) ShareUtil.getInstance(this).get("isJp", false);
+        if (tab != 0 && isJp) {
+            mShopFragment.refreshDingdanAll();
+            mPager.setCurrentItem(tab);
+            ShareUtil.getInstance(AppAppLication.getmContext()).put("isJp", false);
+        }
         if (mHomeFragment != null) {
             mHomeFragment.getData();
         }

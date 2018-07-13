@@ -13,6 +13,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.superc.shangjiaban.R;
+import com.superc.shangjiaban.jiguang.SetJPushAlias;
 import com.superc.shangjiaban.utils.ShareUtil;
 import com.superc.shangjiaban.utils.ToastUtil;
 import com.superc.shangjiaban.utils.TxtUtil;
@@ -115,6 +116,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Bundle bundle = new Bundle();
                         bundle.putString("login", "登录成功");
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                        new SetJPushAlias(uid,LoginActivity.this).setAlias();
 
                         ShareUtil.getInstance(LoginActivity.this).put("uid", uid);
                         ShareUtil.getInstance(LoginActivity.this).put("role_id",role_id);

@@ -89,7 +89,7 @@ public class PropertyDetailBean {
         @SerializedName("role_id")
         private int roleId;
         @SerializedName("distribut_money")
-        private int distributMoney;
+        private String distributMoney;
         @SerializedName("phone")
         private String phone;
         @SerializedName("linkman")
@@ -131,11 +131,11 @@ public class PropertyDetailBean {
             this.roleId = roleId;
         }
 
-        public int getDistributMoney() {
+        public String getDistributMoney() {
             return distributMoney;
         }
 
-        public void setDistributMoney(int distributMoney) {
+        public void setDistributMoney(String distributMoney) {
             this.distributMoney = distributMoney;
         }
 

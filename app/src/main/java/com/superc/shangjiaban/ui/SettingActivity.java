@@ -7,6 +7,7 @@ import android.view.View;
 import com.superc.shangjiaban.R;
 import com.superc.shangjiaban.base.BaseActivity;
 import com.superc.shangjiaban.base.Constant;
+import com.superc.shangjiaban.jiguang.SetJPushAlias;
 import com.superc.shangjiaban.utils.ShareUtil;
 import com.yanzhenjie.nohttp.NoHttp;
 import com.yanzhenjie.nohttp.RequestMethod;
@@ -49,6 +50,7 @@ public class SettingActivity extends BaseActivity {
     }
 
     public void logout(View v) {
+        new SetJPushAlias("",this).cancleAlias();
         ShareUtil.getInstance(this).remove("uid");
         Request<JSONObject> request = NoHttp.createJsonObjectRequest(Constant.LOGNOUT, RequestMethod.POST);
         mRequestQueue.add(2, request, new OnResponseListener<JSONObject>() {

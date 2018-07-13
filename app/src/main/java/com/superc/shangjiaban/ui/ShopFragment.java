@@ -310,7 +310,9 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
     }
     /*MainActivity跳转时所有订单的跳转*/
     public void refreshDingdanAll() {
-        mShopRbAll.setChecked(true);
+        if(mShopRbAll!=null) {
+            mShopRbAll.setChecked(true);
+        }
     }
 
     public void dingdanAll() {
