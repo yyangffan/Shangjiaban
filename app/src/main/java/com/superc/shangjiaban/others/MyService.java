@@ -3,31 +3,21 @@ package com.superc.shangjiaban.others;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.util.Log;
 
 import com.superc.shangjiaban.R;
+import com.superc.shangjiaban.base.AppAppLication;
 import com.superc.shangjiaban.ui.MainActivity;
 import com.superc.shangjiaban.utils.ShareUtil;
-import com.yanzhenjie.nohttp.NoHttp;
-import com.yanzhenjie.nohttp.RequestMethod;
-import com.yanzhenjie.nohttp.rest.OnResponseListener;
-import com.yanzhenjie.nohttp.rest.Request;
 import com.yanzhenjie.nohttp.rest.RequestQueue;
-import com.yanzhenjie.nohttp.rest.Response;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.superc.shangjiaban.base.Constant.HASNEWDINGDAN;
+import cn.jpush.android.api.JPushInterface;
 
 /********************************************************************
  @version: 1.0.0
@@ -45,14 +35,19 @@ public class MyService extends Service {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            getNewDd();
-            all_count++;
+//            getNewDd();
+//            all_count++;
+            guanBi();
             mHandler.sendEmptyMessageDelayed(110, 2000);/*2秒进行一次接口查询*/
         }
     };
     MediaPlayer mMediaPlayer;
 
     public MyService() {
+    }
+
+    public Context getMine(){
+        return this;
     }
 
     @Override
@@ -67,65 +62,77 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        mRequestQueue = NoHttp.newRequestQueue();
+//        mRequestQueue = NoHttp.newRequestQueue();
         uid = (String) ShareUtil.getInstance(this).get("uid", "");
         mHandler.obtainMessage().sendToTarget();
 
         forgroundNote();
         return super.onStartCommand(intent, flags, startId);
     }
-
-    /*查询已付款订单数量(用来做语音提示)*/
-    public void getNewDd() {
+    /*关闭前台服务*/
+    public void guanBi() {
         uid = (String) ShareUtil.getInstance(this).get("uid", "");
         if(uid.equals("")){
             stopForeground(true);
             return;
         }
-        Map<String, String> map = new HashMap<>();
-        map.put("uid", uid);
-        final Request<JSONObject> request = NoHttp.createJsonObjectRequest(HASNEWDINGDAN, RequestMethod.POST);
-        request.add("uid",uid);
-        mRequestQueue.add(2, request, new OnResponseListener<JSONObject>() {
-            @Override
-            public void onStart(int what) {
-            }
+        boolean pushStopped = JPushInterface.isPushStopped(AppAppLication.getmContext());
+        if(pushStopped){
+            JPushInterface.resumePush(AppAppLication.getmContext());
+        }
+    }
 
-            @Override
-            public void onSucceed(int what, Response<JSONObject> response) {
-                JSONObject jsonObject = response.get();
-                try {
-                    String count = jsonObject.getString("count");
-                    if (count == null || count.equals("")) {
-                        count = "0";
-                    }
-                    if (old_count == 0) {
-                        old_count = Integer.parseInt(count);
-                    } else {
-                        new_count = Integer.parseInt(count);
-                        if (new_count != old_count) {
-//                            int num = new_count - old_count;/*新增加的订单条数*/
-                            mMediaPlayer = MediaPlayer.create(MyService.this, R.raw.tongzhi);
-                            mMediaPlayer.start();
-                            old_count = new_count;
-                        }
-                    }
-                    Log.i(" MyService 订单数量", "old_count:" + old_count + "  new_count:" + new_count);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onFailed(int what, Response<JSONObject> response) {
-//                Toast.makeText(MyService.this, "网络异常", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFinish(int what) {
-            }
-        });
+    /*查询已付款订单数量(用来做语音提示)*/
+    public void getNewDd() {
+//        uid = (String) ShareUtil.getInstance(this).get("uid", "");
+//        if(uid.equals("")){
+//            stopForeground(true);
+//            return;
+//        }
+//        Map<String, String> map = new HashMap<>();
+//        map.put("uid", uid);
+//        final Request<JSONObject> request = NoHttp.createJsonObjectRequest(HASNEWDINGDAN, RequestMethod.POST);
+//        request.add("uid",uid);
+//        mRequestQueue.add(2, request, new OnResponseListener<JSONObject>() {
+//            @Override
+//            public void onStart(int what) {
+//            }
+//
+//            @Override
+//            public void onSucceed(int what, Response<JSONObject> response) {
+//                JSONObject jsonObject = response.get();
+//                try {
+//                    String count = jsonObject.getString("count");
+//                    if (count == null || count.equals("")) {
+//                        count = "0";
+//                    }
+//                    if (old_count == 0) {
+//                        old_count = Integer.parseInt(count);
+//                    } else {
+//                        new_count = Integer.parseInt(count);
+//                        if (new_count != old_count) {
+////                            int num = new_count - old_count;/*新增加的订单条数*/
+//                            mMediaPlayer = MediaPlayer.create(MyService.this, R.raw.tongzhi);
+//                            mMediaPlayer.start();
+//                            old_count = new_count;
+//                        }
+//                    }
+//                    Log.i(" MyService 订单数量", "old_count:" + old_count + "  new_count:" + new_count);
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailed(int what, Response<JSONObject> response) {
+////                Toast.makeText(MyService.this, "网络异常", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onFinish(int what) {
+//            }
+//        });
     }
 
     /*开启前台服务*/

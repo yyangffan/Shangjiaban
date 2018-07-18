@@ -5,7 +5,7 @@ package com.superc.shangjiaban.base;
  */
 
 public class Constant {
-
+    public static final int JPUSH_BIAOSHI=88200;
     //测试地址http://api  正式地址http://bxgj
     private static String BASEURL="http://bxgj";
 

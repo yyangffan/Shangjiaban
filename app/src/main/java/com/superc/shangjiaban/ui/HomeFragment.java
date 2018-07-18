@@ -98,7 +98,11 @@ public class HomeFragment extends BaseFragment {
                 String code = data.getCode();
 //                showToast(data.getInfo());
                 if (code.equals("200")) {
-                    setMsg(data.getDate());
+                    if(mHomeGodNum!=null) {
+                        setMsg(data.getDate());
+                    }else {
+                        showToast("请稍后重试");
+                    }
                 }
 
             }

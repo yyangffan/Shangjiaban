@@ -11,7 +11,7 @@ import com.superc.shangjiaban.R;
 import com.superc.shangjiaban.base.AppAppLication;
 import com.superc.shangjiaban.base.BaseActivity;
 import com.superc.shangjiaban.base.Constant;
-import com.superc.shangjiaban.jiguang.SetJPushAlias;
+import com.superc.shangjiaban.others.MyService;
 import com.superc.shangjiaban.others.MyViewPager;
 import com.superc.shangjiaban.others.PublicBean;
 import com.superc.shangjiaban.utils.ShareUtil;
@@ -22,6 +22,9 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
+import cn.jpush.android.api.JPushInterface;
+
+import static com.superc.shangjiaban.base.Constant.JPUSH_BIAOSHI;
 import static com.superc.shangjiaban.base.Otehers.REQESTCODE_VILLAG;
 import static com.superc.shangjiaban.base.Otehers.REQUESTCODE_ALLDDSEARCH;
 import static com.superc.shangjiaban.base.Otehers.REQUESTCODE_ALLDZITI;
@@ -70,8 +73,8 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
     @Override
     public void initListener() {
         //开启订单轮询进行语音提醒(由于ios不能再锁屏状态下提醒所以才舍弃了这种办法，使用了推送的方式来进行提醒)
-//        Intent intent = new Intent(this, MyService.class);
-//        this.startService(intent);
+        Intent intent = new Intent(this, MyService.class);
+        this.startService(intent);
     }
 
 
@@ -257,12 +260,13 @@ public class MainActivity extends BaseActivity implements ViewPager.OnPageChange
             endT = stT;
             return;
         }
-        logout();
+//        logout();
         super.onBackPressed();
     }
-
+    /*需要调用该方法退出登录--之后才能再次登录(后台要求)*/
     public void logout() {
-        new SetJPushAlias("", this).cancleAlias();
+//        new SetJPushAlias("", this).cancleAlias();
+        JPushInterface.deleteAlias(this,JPUSH_BIAOSHI);
         ShareUtil.getInstance(this).remove("uid");
         toGetData(new HashMap<String, String>(), Constant.LOGNOUT, false, new CallNetBack() {
             @Override

@@ -160,6 +160,9 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
         mShopRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int view_id) {
+                LinearLayoutManager layoutManager = new LinearLayoutManager(ShopFragment.this.getActivity());
+                layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                mShopRc.setLayoutManager(layoutManager);
                 switch (view_id) {
                     case R.id.shop_rb_all:
                         dingdanAll();
@@ -252,7 +255,7 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
 //                if (state.equals("1")) {/*进行通知操作--弹窗*/
 //                    gotoRemind();
 //                } else if (state.equals("2")) {/*进行已自提操作--弹窗*/
-                    gotoYiTH(orderId,order_prom_type);
+                gotoYiTH(orderId, order_prom_type);
 //                }
 //                } else {
 //                    showToast("权限不足");
@@ -308,9 +311,10 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
         });
 
     }
+
     /*MainActivity跳转时所有订单的跳转*/
     public void refreshDingdanAll() {
-        if(mShopRbAll!=null) {
+        if (mShopRbAll != null) {
             mShopRbAll.setChecked(true);
         }
     }
@@ -728,7 +732,7 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
         map.put("biaoshi", "");
         map.put("page", zt_page + "");
         map.put("size", "15");
-        if(zt_page==1){
+        if (zt_page == 1) {
             mOwnList.clear();
             mShopZtAdapter.notifyDataSetChanged();
         }
@@ -818,7 +822,7 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
     }
 
     /*已提货的操作*/
-    public void gotoYiTH(final String orderId,final String order_prom_type) {
+    public void gotoYiTH(final String orderId, final String order_prom_type) {
         DialogUtil.getmInstance(this.getActivity()).showRemindDialog().setRemindTvContent("确认已提货？", "取消", "确定").setOnTvClickListener(new DialogUtil.OnTvClickListener() {
             @Override
             public void OnTvClickListener(int view_id) {
@@ -827,7 +831,7 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
 
                         break;
                     case R.id.dialog_remind_sure:
-                        pickUp(orderId,order_prom_type);
+                        pickUp(orderId, order_prom_type);
                         break;
                 }
 
@@ -835,12 +839,13 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
         });
 
     }
+
     /*进行待自提*/
-    public void pickUp(String order_id,String order_prom_type) {
+    public void pickUp(String order_id, String order_prom_type) {
         Map<String, String> map = new HashMap<>();
         map.put("uid", uid);
         map.put("order_id", order_id);
-        if(order_prom_type.equals("6")) {
+        if (order_prom_type.equals("6")) {
             map.put("biaoshi", "6");
         }
 
@@ -851,7 +856,7 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
                 String info = data.getInfo();
                 showToast(info);
                 if (code == 200) {
-                    zt_page=1;
+                    zt_page = 1;
 //                    getWaitOwn();
                     mSmartRefreshLayout.autoRefresh();
                 }
@@ -884,9 +889,11 @@ public class ShopFragment extends BaseFragment implements TextToSpeech.OnInitLis
                 mActivity.setTitleRight(0 + "");
             }
         }
-        mSmartRefreshLayout.autoRefresh();
-
-
+        if (mSmartRefreshLayout != null) {
+            mSmartRefreshLayout.autoRefresh();
+        }else {
+            showToast("请稍候刷新");
+        }
     }
 
 

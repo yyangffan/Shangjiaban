@@ -13,7 +13,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.superc.shangjiaban.R;
-import com.superc.shangjiaban.jiguang.SetJPushAlias;
+import com.superc.shangjiaban.base.Constant;
 import com.superc.shangjiaban.utils.ShareUtil;
 import com.superc.shangjiaban.utils.ToastUtil;
 import com.superc.shangjiaban.utils.TxtUtil;
@@ -32,8 +32,10 @@ import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cn.jpush.android.api.JPushInterface;
 
 import static com.superc.shangjiaban.base.Constant.ADMINLOGIN;
+import static com.superc.shangjiaban.base.Constant.JPUSH_BIAOSHI;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -55,6 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         initListener();
+        logout();
 
     }
 
@@ -117,7 +120,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         bundle.putString("login", "登录成功");
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
-                        new SetJPushAlias(uid,LoginActivity.this).setAlias();
+//                        new SetJPushAlias(uid,LoginActivity.this).setAlias();
+                        JPushInterface.setAlias(LoginActivity.this,JPUSH_BIAOSHI,uid);
 
                         ShareUtil.getInstance(LoginActivity.this).put("uid", uid);
                         ShareUtil.getInstance(LoginActivity.this).put("role_id",role_id);
@@ -126,7 +130,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         HashMap<String, String> map = new HashMap<String, String>();
                         map.put("name_pwd","用户名:"+name+" 密码:"+pwd);
                         MobclickAgent.onEvent(LoginActivity.this, "user__pwd", map);
-
+                        ShareUtil.getInstance(LoginActivity.this).put("success", true);
                         LoginActivity.this.finish();
                     }
                     ToastUtil.showToast(LoginActivity.this, info);
@@ -144,6 +148,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onFinish(int what) {
                 hideLoadPop();
+            }
+        });
+    }
+
+    public void logout() {
+        ShareUtil.getInstance(this).remove("uid");
+        Request<JSONObject> request = NoHttp.createJsonObjectRequest(Constant.LOGNOUT, RequestMethod.POST);
+        mRequestQueue.add(2, request, new OnResponseListener<JSONObject>() {
+            @Override
+            public void onStart(int what) {
+            }
+
+            @Override
+            public void onSucceed(int what, Response<JSONObject> response) {
+            }
+
+            @Override
+            public void onFailed(int what, Response<JSONObject> response) {
+            }
+
+            @Override
+            public void onFinish(int what) {
             }
         });
     }

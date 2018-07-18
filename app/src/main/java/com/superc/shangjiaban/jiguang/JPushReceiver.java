@@ -1,21 +1,27 @@
 package com.superc.shangjiaban.jiguang;
 
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.superc.shangjiaban.R;
-import com.superc.shangjiaban.base.AppAppLication;
 import com.superc.shangjiaban.ui.MainActivity;
 import com.superc.shangjiaban.utils.ShareUtil;
 
 import org.json.JSONObject;
 
 import cn.jpush.android.api.JPushInterface;
+
+import static android.content.Context.NOTIFICATION_SERVICE;
 
 /**
  * 接收到极光推送后的操作设置
@@ -30,7 +36,7 @@ public class JPushReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if (null == nm) {
-            nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            nm = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
         }
         Bundle bundle = intent.getExtras();
 
@@ -73,9 +79,11 @@ public class JPushReceiver extends BroadcastReceiver {
         }
         switch (type) {
             case "10"://有新订单
-                mMediaPlayer = MediaPlayer.create(AppAppLication.getmContext(), R.raw.tongzhi);
+                mMediaPlayer = MediaPlayer.create(context, R.raw.tongzhi);
                 mMediaPlayer.start();
-                ShareUtil.getInstance(AppAppLication.getmContext()).put("isJp", true);
+                ShareUtil.getInstance(context).put("isJp", true);
+//                processCustomMessage(context,bundle);
+//                ShareUtil.getInstance(AppAppLication.getmContext()).put("isJp", true);
                 break;
         }
 
@@ -100,7 +108,53 @@ public class JPushReceiver extends BroadcastReceiver {
                 context.startActivity(mIntent);
                 break;
         }
-
-
     }
+
+    /**
+     * 实现自定义推送声音
+     * @param context
+     * @param bundle
+     */
+    private void processCustomMessage(Context context, Bundle bundle) {
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(context);
+
+        String title = bundle.getString(JPushInterface.EXTRA_TITLE);
+        String msg = bundle.getString(JPushInterface.EXTRA_MESSAGE);
+        String extras = bundle.getString(JPushInterface.EXTRA_EXTRA);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
+
+        Intent mIntent = new Intent(context,MainActivity.class);
+        mIntent.putExtra("tab", 4);
+        mIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, mIntent, 0);
+
+        notification.setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .setContentText(msg)
+                .setContentTitle("您有新的订单,请查看")
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setLargeIcon(bitmap)
+                .setNumber(3);
+
+        Log.e(TAG, "processCustomMessage: extras----->" + extras);
+//        if (!TextUtils.isEmpty(extras)) {
+//            try {
+//                JSONObject extraJson = new JSONObject(extras);
+//                if (null != extraJson && extraJson.length() > 0) {
+//                    String sound = extraJson.getString("sound");
+//                    if("1".equals(sound)){
+                        notification.setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" +R.raw.tongzhi));
+//                    } else {
+//                        notification.setSound(Uri.parse("android.resource://" + context.getPackageName() + "/" +R.raw.tongzhi));
+//                    }
+//                }
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(3, notification.build());  //id随意，正好使用定义的常量做id，0除外，0为默认的Notification
+    }
+
 }
